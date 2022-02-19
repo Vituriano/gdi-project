@@ -1,2 +1,8 @@
 # gdi-project
-Repositório da cadeira de GDI
+Repositório do projeto da disciplina de GDI
+
+# Time
+VITURIANO OLIVEIRA XISTO
+VINICIUS SALES OLIVEIRA
+ARTHUR BRITO MEDEIROS
+JOAO GUILHERME MONTEIRO DE SOUZA FILHO
