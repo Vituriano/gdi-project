@@ -1,4 +1,7 @@
-# Minimundo
+# Projeto de base de dados
+Esse reposítorio diz respeito ao projeto da disciplina de Gerenciamento de Dados e informação do Cin (Centro de informática) na UFPE. Desse modo, esse projeto é composto pelos modelos Conceitual, Lógico e Físico de banco de dados. Abaixo segue o minimundo do cenário ideado.
+
+# Minimundo do Centro de Pesquisa em exploração de vida alienígena
 
 - O centro de pesquisa possui **funcionários**
     - Cada **funcionário** tem um identificador -  um ID - que é formado pelo departamento que ele atua e o CPF, um ou mais emails e números de telefone para contato.
