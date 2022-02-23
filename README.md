@@ -22,6 +22,9 @@ Esse reposítorio diz respeito ao projeto da disciplina de Gerenciamento de Dado
             - As **revistas** são produzidas pelos **jornalistas**.
             - As **revistas** tem uma data de publicação e são identificadas pelo ISSN.
 
+# Instruções
+Para vizualizar os modelos, faz-se necessário o uso da ferramente EERCASE, disponível no site: https://sites.google.com/a/cin.ufpe.br/eercase/
+
 # Time
 - VITURIANO OLIVEIRA XISTO
 - VINICIUS SALES OLIVEIRA
