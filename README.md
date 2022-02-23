@@ -1,5 +1,4 @@
 # Minimundo
-# Minimundo
 
 - O centro de pesquisa possui **funcionários**
     - Cada **funcionário** tem um identificador -  um ID - que é formado pelo departamento que ele atua e o CPF, um ou mais emails e números de telefone para contato.
