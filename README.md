@@ -23,7 +23,7 @@ Esse reposítorio diz respeito ao projeto da disciplina de Gerenciamento de Dado
             - As **revistas** tem uma data de publicação e são identificadas pelo ISSN.
 
 # Instruções
-Para vizualizar o modelo Conceitual (localizado no arquivo [workspace/alien_rc/minimundo.eer](https://github.com/Vituriano/gdi-project/blob/main/workspace/alien_rc/minimundo.eer)), faz-se necessário o uso da ferramente EERCASE, disponível no site: https://sites.google.com/a/cin.ufpe.br/eercase/
+Para vizualizar o modelo Conceitual (localizado no arquivo [workspace/alien_rc/minimundo.eer](https://github.com/Vituriano/gdi-project/blob/main/workspace/alien_rc/minimundo.eer)), faz-se necessário o uso da ferramenta EERCASE, disponível no site: https://sites.google.com/a/cin.ufpe.br/eercase/
 
 # Time
 - VITURIANO OLIVEIRA XISTO
