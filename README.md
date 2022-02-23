@@ -10,7 +10,7 @@ Esse reposítorio diz respeito ao projeto da disciplina de Gerenciamento de Dado
 - **Pesquisadores** podem ser Astrônomos
     - **Astrônomos** descobrem **Sistemas Solares** e **Planetas**.
     - Cada **sistema solar** tem um nome identificador e cada **planeta** possui um código em relação àquele sistema solar (ex: Pegasis 51 B).
-        - Os **engenheiros** constroem **OVIs**
+        - Os **engenheiros** constroem **OVIs** (Objeto voador identificado)
             - Os **OVIs** têm diferentes tipos, podendo ser satélites, drones ou foguetes, cada tipo tem diferentes modelos e são identificados pelo número de série.
             - Os **OVIs** exploram planetas
 - Os **pesquisadores** realizam pesquisas que podem ou não serem expostas em **simpósios**.
