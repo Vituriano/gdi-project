@@ -19,22 +19,22 @@ CREATE TABLE tarefa(
 );
 
 CREATE TABLE funcionario(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   telefone_residencial NUMBER,
   celular NUMBER UNIQUE,
   CONSTRAINT pk_funcionario PRIMARY KEY (cpf)
 );
 
 CREATE TABLE email(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   email VARCHAR(20) NOT NULL,
   CONSTRAINT pk_email PRIMARY KEY (cpf,email),
   CONSTRAINT fk_email FOREIGN KEY (cpf) REFERENCES funcionario(cpf)
 );
 
 CREATE TABLE pesquisador(
-  cpf NUMBER(4) NOT NULL,
-  chefe NUMBER(4) UNIQUE,
+  cpf VARCHAR(11) NOT NULL,
+  chefe VARCHAR(11) UNIQUE,
   n_pesquisas NUMBER,
     CONSTRAINT chk_pesquisas CHECK (n_pesquisas>-1),
   CONSTRAINT pk_pesquisador PRIMARY KEY (cpf),
@@ -43,14 +43,14 @@ CREATE TABLE pesquisador(
 );
 
 CREATE TABLE engenheiro(
-  cpf NUMBER(4) NOT NULL,
-  crea NUMBER(3) UNIQUE,
+  cpf VARCHAR(11) NOT NULL,
+  crea VARCHAR(10) UNIQUE,
   CONSTRAINT pk_engenheiro PRIMARY KEY (cpf),
   CONSTRAINT fk_engenheiro FOREIGN KEY (cpf) REFERENCES funcionario(cpf)
 );
 
 CREATE TABLE astronomo(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   n_planetas_descobertos NUMBER,
     CONSTRAINT chk_planetas CHECK (n_planetas_descobertos>-1),
   CONSTRAINT pk_astronomo PRIMARY KEY (cpf),
@@ -59,7 +59,7 @@ CREATE TABLE astronomo(
 
 CREATE TABLE sistema_solar(
   nome_identificador VARCHAR(15) NOT NULL,
-  pesquisador NUMBER(4) NOT NULL,
+  pesquisador VARCHAR(11) NOT NULL,
   data_descoberta DATE,
   CONSTRAINT pk_sistemasolar PRIMARY KEY (nome_identificador),
   CONSTRAINT fk_sistemasolar FOREIGN KEY (pesquisador) REFERENCES astronomo(cpf)
@@ -68,7 +68,7 @@ CREATE TABLE sistema_solar(
 CREATE TABLE planeta(
   nome_identificador VARCHAR(15) NOT NULL,
   codigo NUMBER NOT NULL,
-  pesquisador NUMBER(4) NOT NULL,
+  pesquisador VARCHAR(11) NOT NULL,
   data_descoberta DATE,
   CONSTRAINT pk_planeta PRIMARY KEY (nome_identificador,codigo),
   CONSTRAINT fk_sistemasolar_planeta FOREIGN KEY (nome_identificador) REFERENCES sistema_solar(nome_identificador),
@@ -95,7 +95,7 @@ CREATE TABLE ovi(
 );
 
 CREATE TABLE realiza_pesquisa(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   n_cadastro NUMBER NOT NULL,
   CONSTRAINT pk_realiza_simposio PRIMARY KEY (cpf,n_cadastro),
   CONSTRAINT fk_pesquisador_realiza_simposio FOREIGN KEY (cpf) REFERENCES pesquisador(cpf),
@@ -103,7 +103,7 @@ CREATE TABLE realiza_pesquisa(
 );
 
 CREATE TABLE pesquisa_exposta_simposio(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   n_cadastro NUMBER NOT NULL,
   nome VARCHAR(30) NOT NULL,
   ano NUMBER NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE pesquisa_exposta_simposio(
 );
 
 CREATE TABLE executa_tarefa_ovi(
-  cpf NUMBER(4) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
   tipo VARCHAR(15) NOT NULL,
   n_serie NUMBER NOT NULL,
   data_manutencao DATE NOT NULL,
