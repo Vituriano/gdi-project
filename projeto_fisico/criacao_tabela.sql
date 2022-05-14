@@ -20,8 +20,8 @@ CREATE TABLE tarefa(
 
 CREATE TABLE funcionario(
   cpf VARCHAR(11) NOT NULL,
-  telefone_residencial NUMBER,
-  celular NUMBER UNIQUE,
+  telefone_residencial VARCHAR(10),
+  celular VARCHAR(11) UNIQUE,
   CONSTRAINT pk_funcionario PRIMARY KEY (cpf)
 );
 
