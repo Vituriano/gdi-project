@@ -33,58 +33,17 @@ INSERT INTO engenheiro (cpf, crea) VALUES ('63985704058', '7218296008');
 INSERT INTO engenheiro (cpf, crea) VALUES ('91371595003', '5212928564');
 INSERT INTO engenheiro (cpf, crea) VALUES ('12375608020', '7132491553');
 
-/*Tarefa (DONE) */
--- Id é chave artificial
-CREATE SEQUENCE id_tarefa
-START WITH 0
-INCREMENT BY 1;
-
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Motor');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Camera');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Painel solar');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Antena');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Motor');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Camera');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Painel solar');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Antena');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Motor');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Camera');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Antena');
-INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Painel solar');
-
-/* executa_tarefa_ovi (DONE) */
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('26308866032', 6, '61548209953037', date'2021-05-11');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('33825639088', 2, '98473189245677', date'2021-06-12');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('66618289009', 4, '85499637609987', date'2021-07-15');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('44396178085', 8, '789551039478675', date'2021-08-22');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('30762066059', 4, '157488506350894', date'2021-08-25');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('80421723033', 6, '87899155638671', date'2021-09-11');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('29687496096', 2, '698674743598114', date'2021-10-22');
-INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('63985704058', 8, '7165326470402929', date'2022-02-03');
-                                                                                 
-/* OVI (DONE) */                                                                                  
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('61548209953037', 'Gon', 6154, 'Alfa', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('98473189245677', 'Zoro', 9847, 'Corsa', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('85499637609987', 'Zoro', 8549, 'SpaceX', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('789551039478675', 'Nami', 78955, 'Tesla', 'Veículo de Exploração');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('157488506350894', 'Luffy', 15748, 'Sonic', 'Veículo de Exploração');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('87899155638671', 'Gon', 8789, 'Vonage', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('698674743598114', 'Zoro', 69867, 'Inclusio', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('7165326470402929', 'Gon', 716532, 'Brave', 'Foguete');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('9831211822758925', 'Killua', 983121, 'Machine', 'Veículo de Exploração');
-INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES ('1665685525090507', 'Killua', 166568, 'KForce', 'Veículo de Exploração');
-
 /* Pesquisador (DONE)*/
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('33224504064', '6838351773',  '47967065816');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('55337937049', '8927127194',  '33992671733');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('19343019068', '2232780811',  '84972825036');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('69546432032', '4431495365',  '63987527521');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('73711283039', '9538477321',  '83993641776');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('21456284010', '6224854916',  '66986421265');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('20180602012', '6526184481',  '67996679516');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('72099537011', '7727267565',  '95974673693');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('25594253009', '6225348682',  '89992976015');
-INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('43224790067', '8322201203',  '61997057097');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('33224504064', '6838351773', '47967065816');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('55337937049', '8927127194', '33992671733');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('19343019068', '2232780811', '84972825036');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('69546432032', '4431495365', '63987527521');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('73711283039', '9538477321', '83993641776');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('21456284010', '6224854916', '66986421265');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('20180602012', '6526184481', '67996679516');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('72099537011', '7727267565', '95974673693');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('25594253009', '6225348682', '89992976015');
+INSERT INTO funcionario (cpf, telefone_residencial, celular) VALUES ('43224790067', '8322201203', '61997057097');
 -- Só tem 2 CPFs como chefes porque tem só existem 2 chefes
 INSERT INTO pesquisador (cpf, chefe) VALUES ('33224504064', NULL);
 INSERT INTO pesquisador (cpf, chefe) VALUES ('55337937049', NULL);
@@ -129,6 +88,69 @@ INSERT INTO astronomo (cpf) VALUES ('06216808001');
 INSERT INTO astronomo (cpf) VALUES ('04516668017');
 INSERT INTO astronomo (cpf) VALUES ('78444159085');
 
+/*Tarefa (DONE) */
+-- Id é chave artificial
+CREATE SEQUENCE id_tarefa
+START WITH 1
+INCREMENT BY 1;
+
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Motor');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Camera');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Painel solar');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Reparo', 'Antena');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Motor');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Camera');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Painel solar');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Manutenção', 'Antena');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Motor');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Camera');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Antena');
+INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Painel solar');
+
+/* Sistema solar (DONE)*/
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Zoro', '35782855010', date'1990-01-20');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Gon', '84339951030', date'1999-07-14');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Killua', '22453298054', date'2021-03-15');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Luffy', '84339951030', date'1960-04-05');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Nami', '78444159085', date'1980-11-09');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Usopp', '35782855010', date'1981-12-09');
+INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Robin', '22453298054', date'1981-12-09');
+
+
+/* Planeta  (DONE) */
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Gon', 6154, '35782855010', date'2005-03-22');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Zoro', 9847, '84339951030', date'2007-06-02');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Nami', 78955, '84339951030', date'2002-07-17');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Zoro', 8549, '60716550059', date'2013-08-22');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Luffy', 15748, '02194368000', date'2015-09-21');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Gon', 8789, '76708234025', date'2011-10-04');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Zoro', 69867, '22453298054', date'2011-11-15');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Gon', 716532, '06216808001', date'2022-12-08');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Killua', 983121, '04516668017', date'2008-01-07');
+INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUES ('Killua', 166568, '06216808001', date'2009-03-21');
+
+/* OVI (DONE) */                                                                                  
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (3037, NULL, NULL, 'Alfa', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (5677, NULL, NULL, 'Corsa', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (9987, NULL, NULL, 'SpaceX', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (8675, 'Nami', 78955, 'Tesla', 'Veículo de Exploração');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (0894, 'Luffy', 15748, 'Sonic', 'Veículo de Exploração');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (8671, 'Gon', 8789, 'Vonage', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (8114, 'Zoro', 69867, 'Inclusio', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (2929, 'Gon', 716532, 'Brave', 'Foguete');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (8925, 'Killua', 983121, 'Machine', 'Veículo de Exploração');
+INSERT INTO ovi (n_serie, nome_identificador, codigo, modelo, tipo) VALUES (0507, 'Killua', 166568, 'KForce', 'Veículo de Exploração');
+
+/* executa_tarefa_ovi (DONE) */
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('26308866032', 6, 3037, date'2021-05-11');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('33825639088', 2, 5677, date'2021-06-12');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('66618289009', 4, 9987, date'2021-07-15');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('44396178085', 8, 8675, date'2021-08-22');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('30762066059', 4, 0894, date'2021-08-25');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('80421723033', 6, 8671, date'2021-09-11');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('29687496096', 2, 8114, date'2021-10-22');
+INSERT INTO executa_tarefa_ovi (cpf, id_tarefa, n_serie, data_manutencao) VALUES ('63985704058', 8, 2929, date'2022-02-03');
+
 /*Pesquisa (DONE)*/
 CREATE SEQUENCE cadastros_pesq
 START WITH 1
@@ -153,7 +175,7 @@ INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Aldeia: Lix
 INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Axé com Pitu: A Mistura Letal para Organismos Extraterrestres', 2);
 INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Faixa de Frequência Letal a ETs', 2);
 INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Birulirônio: Análise das Propriedades do Novo Elemento Natural', 3);
-INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Descoberta de Elemento em Planeta Sugere Uma Nova Ilha de Estabilidade',3),
+INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Descoberta de Elemento em Planeta Sugere Uma Nova Ilha de Estabilidade',3);
 INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Sistema de Mapeamento de Regiões de Condições Climáticas Extremas em Planeta Recém Descoberto', 4);
 INSERT INTO artigo (doi,titulo, pesquisa) VALUES (gnrt_doi.nextval, 'Planeta Habitável em Sistema solar Próximo', 4);
 
@@ -203,23 +225,3 @@ INSERT INTO email (cpf, email) VALUES ('33825639088', 'jopq@cin.ufpe.br');
 INSERT INTO email (cpf, email) VALUES ('66618289009', 'jlgms@cin.ufpe.br');
 INSERT INTO email (cpf, email) VALUES ('84339951030', 'rcin@cin.ufpe.br');
 INSERT INTO email (cpf, email) VALUES ('60716550059', 'lerve@cin.ufpe.br');
-
-/* Sistema solar (DONE)*/
-INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Zoro', '35782855010', date'2020-01-20');
-INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Gon', '84339951030', date'2021-03-05');
-INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Killua', '22453298054', date'2021-03-05');
-INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Luffy', '84339951030', date'2021-03-05');
-INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Nami', '78444159085', date'2021-03-05');
-
-/* Planeta  (DONE) */
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Gon', 6154, '35782855010', date'2021-03-22');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Zoro', 9847, '84339951030', date'2021-06-02');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Nami', 78955, '84339951030', date'2021-07-17');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Zoro', 8549, '60716550059', date'2021-08-22')
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Luffy', 15748, '02194368000', date'2021-09-21');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Gon', 8789, '76708234025', date'2021-10-04');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Zoro', 69867, '22453298054', date'2021-11-15');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Gon', 716532, '06216808001', date'2021-12-08');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Killua', 983121, '04516668017', date'2022-01-07');
-INSERT INTO planeta (nome_identificador, codigo, pesquisador, data_descoberta) VALUE ('Killua', 166568, '06216808001', date'2022-03-21');
-

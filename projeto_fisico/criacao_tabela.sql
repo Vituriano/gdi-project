@@ -28,7 +28,7 @@ CREATE TABLE funcionario(
 
 CREATE TABLE email(
   cpf VARCHAR(11) NOT NULL,
-  email VARCHAR(20) NOT NULL,
+  email VARCHAR(40) NOT NULL,
   CONSTRAINT pk_email PRIMARY KEY (cpf,email),
   CONSTRAINT fk_email FOREIGN KEY (cpf) REFERENCES funcionario(cpf)
 );
@@ -78,7 +78,7 @@ CREATE TABLE planeta(
 
 CREATE TABLE artigo(
   doi NUMBER NOT NULL,
-  titulo VARCHAR(30) NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
   pesquisa NUMBER NOT NULL,
   CONSTRAINT pk_artigo PRIMARY KEY (doi),
   CONSTRAINT fk_artigo FOREIGN KEY (pesquisa) REFERENCES pesquisa(n_cadastro),
@@ -90,7 +90,7 @@ CREATE TABLE ovi(
   nome_identificador VARCHAR(15),
   codigo NUMBER,
   modelo VARCHAR(15),
-  tipo NUMBER,
+  tipo VARCHAR(50),
   CONSTRAINT pk_ovi PRIMARY KEY (n_serie),
   CONSTRAINT fk_ovi FOREIGN KEY (nome_identificador, codigo) REFERENCES planeta(nome_identificador, codigo)
 );
@@ -106,7 +106,7 @@ CREATE TABLE realiza_pesquisa(
 CREATE TABLE pesquisa_exposta_simposio(
   cpf VARCHAR(11) NOT NULL,
   n_cadastro NUMBER NOT NULL,
-  nome VARCHAR(30) NOT NULL,
+  nome VARCHAR(100) NOT NULL,
   ano NUMBER NOT NULL,
   data_apresentacao DATE NOT NULL,
   CONSTRAINT pk_pesquisa_exposta_simposio PRIMARY KEY (cpf,n_cadastro,nome,ano,data_apresentacao),
@@ -119,7 +119,7 @@ CREATE TABLE executa_tarefa_ovi(
   id_tarefa NUMBER NOT NULL,
   n_serie NUMBER NOT NULL,
   data_manutencao DATE NOT NULL,
-  CONSTRAINT pk_executa_tarefa_ovi PRIMARY KEY (cpf,tipo,n_serie,data_manutencao),
+  CONSTRAINT pk_executa_tarefa_ovi PRIMARY KEY (cpf,id_tarefa,n_serie,data_manutencao),
   CONSTRAINT fk_engenheiro_executa_tarefa_ovi FOREIGN KEY (cpf) REFERENCES engenheiro(cpf),
   CONSTRAINT fk_tarefa_executa_tarefa_ovi FOREIGN KEY (id_tarefa) REFERENCES tarefa(id),
   CONSTRAINT fk_ovi_executa_tarefa_ovi FOREIGN KEY (n_serie) REFERENCES ovi(n_serie)
