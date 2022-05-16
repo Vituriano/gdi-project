@@ -1,21 +1,22 @@
 --criação de tabelas
 CREATE TABLE pesquisa(
   n_cadastro NUMBER NOT NULL,
-  titulo VARCHAR(15) NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
   CONSTRAINT pk_pesquisa PRIMARY KEY (n_cadastro)
 );
 
 CREATE TABLE simposio(
-  nome VARCHAR(30) NOT NULL,
+  nome VARCHAR(100) NOT NULL,
   ano NUMBER NOT NULL,
-  tema VARCHAR(30) NOT NULL,
+  tema VARCHAR(100) NOT NULL,
   CONSTRAINT pk_simposio PRIMARY KEY (nome, ano)
 );
 
 CREATE TABLE tarefa(
-  tipo VARCHAR(15) NOT NULL,
-  ferramenta VARCHAR(10),
-  CONSTRAINT pk_tipo PRIMARY KEY (tipo)
+  id NUMBER NOT NULL ,
+  tipo VARCHAR(30) NOT NULL,
+  componente VARCHAR(15),
+  CONSTRAINT pk_tarefa PRIMARY KEY (id)
 );
 
 CREATE TABLE funcionario(
@@ -34,8 +35,8 @@ CREATE TABLE email(
 
 CREATE TABLE pesquisador(
   cpf VARCHAR(11) NOT NULL,
-  chefe VARCHAR(11) UNIQUE,
-  n_pesquisas NUMBER,
+  chefe VARCHAR(11),
+  n_pesquisas NUMBER DEFAULT 0,
     CONSTRAINT chk_pesquisas CHECK (n_pesquisas>-1),
   CONSTRAINT pk_pesquisador PRIMARY KEY (cpf),
   CONSTRAINT fk_chefe_pesquisador FOREIGN KEY (chefe) REFERENCES pesquisador(cpf),
@@ -51,7 +52,7 @@ CREATE TABLE engenheiro(
 
 CREATE TABLE astronomo(
   cpf VARCHAR(11) NOT NULL,
-  n_planetas_descobertos NUMBER,
+  n_planetas_descobertos NUMBER DEFAULT 0,
     CONSTRAINT chk_planetas CHECK (n_planetas_descobertos>-1),
   CONSTRAINT pk_astronomo PRIMARY KEY (cpf),
   CONSTRAINT fk_astronomo FOREIGN KEY (cpf) REFERENCES pesquisador(cpf)
@@ -115,12 +116,12 @@ CREATE TABLE pesquisa_exposta_simposio(
 
 CREATE TABLE executa_tarefa_ovi(
   cpf VARCHAR(11) NOT NULL,
-  tipo VARCHAR(15) NOT NULL,
+  id_tarefa NUMBER NOT NULL,
   n_serie NUMBER NOT NULL,
   data_manutencao DATE NOT NULL,
   CONSTRAINT pk_executa_tarefa_ovi PRIMARY KEY (cpf,tipo,n_serie,data_manutencao),
   CONSTRAINT fk_engenheiro_executa_tarefa_ovi FOREIGN KEY (cpf) REFERENCES engenheiro(cpf),
-  CONSTRAINT fk_tarefa_executa_tarefa_ovi FOREIGN KEY (tipo) REFERENCES tarefa(tipo),
+  CONSTRAINT fk_tarefa_executa_tarefa_ovi FOREIGN KEY (id_tarefa) REFERENCES tarefa(id),
   CONSTRAINT fk_ovi_executa_tarefa_ovi FOREIGN KEY (n_serie) REFERENCES ovi(n_serie)
 );
 
