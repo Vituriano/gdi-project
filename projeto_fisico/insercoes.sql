@@ -107,6 +107,8 @@ INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem',
 INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Antena');
 INSERT INTO tarefa (id, tipo, componente) VALUES (id_tarefa.nextval, 'Checagem', 'Painel solar');
 
+--id de tarefa formado por tipo e componente
+
 /* Sistema solar (DONE)*/
 INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Zoro', '35782855010', date'1990-01-20');
 INSERT INTO sistema_solar (nome_identificador, pesquisador, data_descoberta) VALUES ('Gon', '84339951030', date'1999-07-14');

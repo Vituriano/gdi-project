@@ -4,8 +4,7 @@
 - [X] Junção externa
 - [X] Semi junção
 - [X] Anti-junção
-- [ ] Subconsulta do tipo escalar
-- [ ] Subconsulta do tipo linha
+- [X] Subconsulta do tipo escalar
 - [ ] Subconsulta do tipo tabela
 - [ ] Operação de conjunto
 
@@ -50,4 +49,48 @@ WHERE NOT EXISTS(
     SELECT 1 --retorna 1 para todas as querys que forem feitas
     FROM astronomo A
     WHERE A.cpf = P.cpf
-); 
+);
+
+-- 6. X Subconsulta do tipo escalar X
+-- Projetar pesquisadores que têm um número de pesquisas maior que a média + 1
+SELECT CPF as CPF_PESQUISADOR, n_pesquisas
+FROM pesquisador P
+WHERE n_pesquisas > (
+    SELECT avg(n_pesquisas)
+    FROM pesquisador
+) + 1
+
+
+-- 7. X Subconsulta do tipo linha X
+-- Consulta o tema do simposio que foi realizado em 2021 com nome 'Simpósio Nacional de Vida Extraterrestre'
+SELECT tema
+FROM simposio
+WHERE (nome, ano) = (
+    SELECT nome, ano
+    FROM simposio
+    WHERE nome = 'Simpósio Nacional de Vida Extraterrestre' AND ano = 2021
+)
+
+-- 8. X Subconsulta do tipo tabela X
+-- Consulta todos os CPFs dos engenheiros que realizaram a tarefa 8 (Manuntenção de antena)
+SELECT CPF AS CPF_ENGENHEIRO
+FROM executa_tarefa_ovi
+WHERE (n_serie, id_tarefa) in (
+    SELECT T.n_serie, T.id_tarefa
+    FROM executa_tarefa_ovi T
+    WHERE T.id_tarefa = 8
+)
+
+
+-- 9. X Operação de Conjunto X
+-- Retorna a data de descoberta e o CPF de descobridores de sistemas solares descobertos depois de 1980
+-- e data de descoberta e CPF de descobridores de planetas descobertos depois de 2009
+(SELECT data_descoberta, pesquisador
+FROM planeta
+WHERE EXTRACT(YEAR FROM data_descoberta) > 2009
+)
+UNION
+(SELECT data_descoberta, pesquisador
+FROM sistema_solar
+WHERE EXTRACT(YEAR FROM data_descoberta) > 1980 
+)
