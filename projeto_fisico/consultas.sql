@@ -5,8 +5,8 @@
 - [X] Semi junção
 - [X] Anti-junção
 - [X] Subconsulta do tipo escalar
-- [ ] Subconsulta do tipo tabela
-- [ ] Operação de conjunto
+- [X] Subconsulta do tipo tabela
+- [X] Operação de conjunto
 
 Atenção: Cada aluno deve fazer ao menos 01 dessas consultas mais 01 procedimento com SQL embutida e parâmetro, função com SQL embutida e parâmetro ou gatilho. 
 */
