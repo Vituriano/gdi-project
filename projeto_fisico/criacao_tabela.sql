@@ -72,8 +72,7 @@ CREATE TABLE planeta(
   pesquisador VARCHAR(11) NOT NULL,
   data_descoberta DATE,
   CONSTRAINT pk_planeta PRIMARY KEY (nome_identificador,codigo),
-  CONSTRAINT fk_sistemasolar_planeta FOREIGN KEY (nome_identificador) REFERENCES sistema_solar(nome_identificador)
-    ON DELETE NO ACTION,
+  CONSTRAINT fk_sistemasolar_planeta FOREIGN KEY (nome_identificador) REFERENCES sistema_solar(nome_identificador),
   CONSTRAINT fk_astronomo_planeta FOREIGN KEY (pesquisador) REFERENCES astronomo(cpf)
 );
 
